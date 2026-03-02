@@ -1,0 +1,13 @@
+package com.example.hotelleru;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringJpaTemplateApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringJpaTemplateApplication.class, args);
+	}
+
+}
