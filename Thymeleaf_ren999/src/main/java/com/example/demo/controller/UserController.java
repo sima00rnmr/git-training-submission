@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
@@ -23,10 +22,6 @@ public class UserController {
 	/*
 	 * ユーザー情報　controller
 	 * */
-	@Controller
-	public class Usercontroller {
-
-	}
 
 	/*
 	 * ユーザー情報　service
@@ -87,13 +82,14 @@ public class UserController {
 				errorList.add(error.getDefaultMessage());
 			}
 			model.addAttribute("validationError", errorList);
+
 			return "user/add";
 		}
 		//ユーザー情報の登録
-		
+
 		/*create
-	     * 「ユーザー新規登録」画面の「登録」ボタン押下時に動き出すメソッド
-	     * ユーザー情報の登録処理をおこなう。
+		 * 「ユーザー新規登録」画面の「登録」ボタン押下時に動き出すメソッド
+		 * ユーザー情報の登録処理をおこなう。
 		 * 
 		 * */
 		userService.create(userRequest);
