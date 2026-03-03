@@ -8,6 +8,6 @@ import com.example.demo.entity.User;
 /*
  * ユーザー情報 Repository
  * */
- @Repository
- public interface UserRepositry extends JpaRepository<User, Long> {
- }
+@Repository
+public interface UserRepositry extends JpaRepository<User, Long> {
+}
