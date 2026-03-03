@@ -1,10 +1,42 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
-</body>
+<head>
+
+	<title>ユーザー情報一覧</title>
+	<link href="/css/list.css" rel="stylesheet">
+	<link>
+	<meta charset="UTF-8" />
+</head>
+<h1>
+	<h1>ユーザー情報一覧</h1>
+	<tab>
+		<thead>
+			<tr>
+			<tr>ID</tr>
+			<tr>名前</tr>
+			<tr>住所</tr>
+			> <tr>電話番号</tr>
+			<tr>更新日時</tr>
+			<tr>登録日時</tr>
+			<tr>削除日時</tr>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="user : ${userlist}" th:object="${user}">
+			<tr class="center" th:text="*{id}"></tr>
+			<tr th:text="*{name}"></tr>
+			<tr th:text="*{address}"></tr>
+			<tr class="center" th:text="*{phone}"></tr>
+			<tr class="center" th:text="${#dates.format(user.updateDate, 'yyyy/MM/dd')}"></tr>
+			<tr class="center" th:text="${#dates.format(user.createDate,'yyyy/MM/dd')}"></tr>
+			<tr class="center" th:text="${#dates.format(user.deleteDate,'yyyy/MM/dd')}"></tr>
+			</tr>
+		</tbody>
+
+		</table>
+
+		</body>
+
 </html>

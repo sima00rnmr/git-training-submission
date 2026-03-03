@@ -1,5 +1,13 @@
-package com.exam
+package com.example.demo.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
+import com.example.demo.entity.User;
 
-//途中2026/03/02
+/*
+ * ユーザー情報 Repository
+ * */
+ @Repository
+ public interface UserRepositry extends JpaRepository<User, Long> {
+ }
